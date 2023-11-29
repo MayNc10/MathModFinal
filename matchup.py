@@ -5,8 +5,8 @@ data.head()
 Teams = list(data["Teams"])
 data = pd.read_csv(r"matches.csv")
 data.head()
-Blue_score = list(data[Red Team 1])
-Red_score = [80, 100]
+Blue_score = list(data["Blue Score"])
+Red_score = list(data["Red Score"])
 Y = []
 for i in Blue_score:
     Y += [[i]]
