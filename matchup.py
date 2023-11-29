@@ -2,22 +2,22 @@ import numpy as np
 import pandas as pd
 data = pd.read_csv(r"teams.csv")
 data.head()
-Teams = data["Teams"]
-data = pd.read_csv(r"mathces.csv")
+Teams = list(data["Teams"])
+data = pd.read_csv(r"matches.csv")
 data.head()
-Blue_score = [100, 80]
+Blue_score = list(data[Red Team 1])
 Red_score = [80, 100]
 Y = []
 for i in Blue_score:
     Y += [[i]]
 for i in Red_score:
     Y += [[i]]
-Team1 = [1, 3]
-Team2 = [2, 4]
-Team3 = [5, 6]
-Team4 = [7, 8]
-Team5 = [1, 3]
-Team6 = [5, 9]
+Team1 = list(data["Blue Team 1"])
+Team2 = list(data["Blue Team 2"])
+Team3 = list(data["Blue Team 3"])
+Team4 = list(data["Red Team 1"])
+Team5 = list(data["Red Team 2"])
+Team6 = list(data["Red Team 3"])
 X = []
 for i in range(len(Blue_score)):
     temp = [1] + [0] * len(Teams)
