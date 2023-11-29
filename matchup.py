@@ -1,8 +1,8 @@
 import numpy as np
 import pandas as pd
-data = pd.read_csv(r"C:\Users\Chris\OneDrive\Documents\Code\Comp_phys\Double_Muon_Run2011A.csv")
+data = pd.read_csv(r"teams.csv")
 data.head()
-Teams = [0, 2]
+Teams = data[]
 Blue_score = [100, 80]
 Red_score = [80, 100]
 Y = []
