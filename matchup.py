@@ -20,20 +20,22 @@ Team5 = list(data["Red Team 2"])
 Team6 = list(data["Red Team 3"])
 X = []
 for i in range(len(Blue_score)):
-    temp = [1] + [0] * len(Teams)
-    temp[Teams.index(Team1[i]) + 1] += 1
-    temp[Teams.index(Team2[i]) + 1] += 1
-    temp[Teams.index(Team3[i]) + 1] += 1
+    temp = [0] * len(Teams)
+    temp[Teams.index(Team1[i])] += 1
+    temp[Teams.index(Team2[i])] += 1
+    temp[Teams.index(Team3[i])] += 1
     X += [temp]
 for i in range(len(Red_score)):
-    temp = [1] + [0] * len(Teams)
-    temp[Teams.index(Team4[i]) + 1] += 1
-    temp[Teams.index(Team5[i]) + 1] += 1
-    temp[Teams.index(Team6[i]) + 1] += 1
+    temp = [0] * len(Teams)
+    temp[Teams.index(Team4[i])] += 1
+    temp[Teams.index(Team5[i])] += 1
+    temp[Teams.index(Team6[i])] += 1
     X += [temp]
 Y = np.matrix(Y)
 X = np.matrix(X)
-Teams = [1] + Teams
-score = np.dot(np.linalg.inv(np.dot(X.transpose(), X)), np.dot(X.transpose(), Y))
+score = np.asarray(np.dot(np.linalg.inv(np.dot(X.transpose(), X)), np.dot(X.transpose(), Y)))
+Scores = []
 for i in range(len(Teams)):
+    Scores += [score[i][0]]
     print(Teams[i], score[i])
+print(Scores)
