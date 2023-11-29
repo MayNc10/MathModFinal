@@ -1,9 +1,9 @@
 import numpy as np
 import pandas as pd
-data = pd.read_csv(r"teams.csv")
+data = pd.read_csv(r"C:\Users\Chris\OneDrive\Documents\Code\teams.csv")
 data.head()
 Teams = list(data["Teams"])
-data = pd.read_csv(r"matches.csv")
+data = pd.read_csv(r"C:\Users\Chris\OneDrive\Documents\Code\matches.csv")
 data.head()
 Blue_score = list(data["Blue Score"])
 Red_score = list(data["Red Score"])
@@ -33,4 +33,7 @@ for i in range(len(Red_score)):
     X += [temp]
 Y = np.matrix(Y)
 X = np.matrix(X)
-np.dot(np.linalg.inv(np.dot(X.transpose(), X)), np.dot(X.transpose(), Y))
+Teams = [1] + Teams
+score = np.dot(np.linalg.inv(np.dot(X.transpose(), X)), np.dot(X.transpose(), Y))
+for i in range(len(Teams)):
+    print(Teams[i], score[i])
