@@ -2,7 +2,9 @@ import numpy as np
 import pandas as pd
 data = pd.read_csv(r"teams.csv")
 data.head()
-Teams = data[]
+Teams = data["Teams"]
+data = pd.read_csv(r"mathces.csv")
+data.head()
 Blue_score = [100, 80]
 Red_score = [80, 100]
 Y = []
