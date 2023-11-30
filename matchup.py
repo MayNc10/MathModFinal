@@ -41,11 +41,15 @@ for i in range(len(Red_score)):
     X += [temp]
 Y = np.matrix(Y)
 X = np.matrix(X)
-score = np.asarray(np.dot(np.linalg.inv(np.dot(X.transpose(), X)), np.dot(X.transpose(), Y)))
+print(np.linalg.det(np.dot(X.transpose(), X)))
+score = np.asarray(np.dot(np.linalg.pinv(np.dot(X.transpose(), X)), np.dot(X.transpose(), Y)))
 Avrage = np.sum(score, axis=0)/len(Teams)
-print(Avrage)
+wheights = np.array([1, 1.5, 2, 1.5, 2])
 Scores = []
 for i in range(len(Teams)):
-    Scores += [sum(score[i] / Avrage)]
-    print(Teams[i], score[i] / Avrage)
-print(Scores)
+    Scores += [sum((score[i] / Avrage) * wheights)]
+rank = rankorder = sorted(range(len(Scores)), key=Scores.__getitem__)
+j = len(Teams)
+for i in rank:
+    print(j, Teams[i], Scores[i], score[i])
+    j -= 1
