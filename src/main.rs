@@ -33,7 +33,7 @@ async fn main() -> Result<(), reqwest::Error> {
         e.state_prov == "NC"
     ).collect::<Vec<_>>();
     v.sort_by(|a: &Event, b| a.compare_by_date(b).unwrap());
-    for _ in 0..5 {
+    for _ in 0..4 {
         v.pop();
     }
     let latest_event = v.pop().unwrap();
