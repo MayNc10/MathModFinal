@@ -1,9 +1,9 @@
 import numpy as np
 import pandas as pd
-data = pd.read_csv(r"C:\Users\Chris\OneDrive\Documents\Code\teams.csv")
+data = pd.read_csv(r"teams.csv")
 data.head()
 Teams = list(data["Teams"])
-data = pd.read_csv(r"C:\Users\Chris\OneDrive\Documents\Code\matches.csv")
+data = pd.read_csv(r"matches.csv")
 data.head()
 Blue_score = list(data["Blue Score"])
 Red_score = list(data["Red Score"])

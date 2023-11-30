@@ -29,7 +29,7 @@ impl Event {
         let res = client
             .get(
                 format!(
-                    "https://www.thebluealliance.com/api/v3/event/{}/matches/simple",
+                    "https://www.thebluealliance.com/api/v3/event/{}/matches",
                     self.key
                 )
             )
